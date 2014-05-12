@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html manifest=cards.appcache>
+
+<title>Memory Game</title>
+<meta charset=utf-8">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename= 'game.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename= 'page.css') }}">
+<script src="{{url_for('static', filename='Event.js')}}"></script>
+<script src="{{url_for('static', filename='Memory.js')}}"></script>
+
+
+<body>
+ <h1> Memory Game Proj </h1>
+
+<p id="game-info">&nbsp;</p>
+
+<ul id="levels">
+
+    <li class="selected" hidden="hidden"><a href="javascript:" level="1">2</a></li>
+
+
+</ul>
+
+<div id="gameover" style="width: 200px; height: 100px; background-color:blue; position: absolute; top: 175px; left: 860px; zIndex: auto; visibility:hidden;" >
+<p style="color:White;  ">Sorry,no more tries, GAME OVER !!! </p>
+</br>
+<button onclick="ResetGame()">Retry</button>
+</div>
+
+<div id="playfield-wrapper">
+&nbsp;
+
+
+
+<div class="win-text">Win</div></div>
+
+
+<script>
+function ResetGame()
+{
+location.reload();
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+"use strict";
+var evt = new Event(),
+    game = new MemoryGame(evt);
+</script>
+
+</body>
